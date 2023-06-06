@@ -1,0 +1,280 @@
+@charset "UTF-8";
+
+a {
+	text-decoration: none !important;
+	color: black !important;
+}
+
+* {
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+html, body {
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+#wrap {
+	display: flex;
+	min-height: 100%;
+	text-align: center;
+	flex-direction: column;
+}
+
+#header {
+	width: 100%;
+	box-shadow: 0 1px 20px 1px rgba(0, 0, 0, 0.1);
+	position: fixed;
+	z-index: 3;
+	background-color: #fff;
+}
+
+#content_wrap {
+	flex: 1;
+	padding: 140px 0 0 0;
+	margin: 0 auto;
+}
+
+#content {
+	width: 1000px;
+}
+
+#footer {
+	padding: 30px 0;
+	background-color: #363636;
+	color: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.headerContent {
+	display: flex;
+	max-width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px 0;
+	background-color: #fff;
+}
+
+#logo {
+	width: 200px;
+}
+
+#login {
+	color: #693FAA;
+}
+
+.line {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.menu {
+	list-style-type: none;
+	display: flex;
+	margin: 0;
+	padding: 0;
+	align-items: center;
+}
+
+#searchBar {
+	width: 320px;
+	height: 43px;
+	padding: 0 0 0 20px;
+	border: 1px solid #ccc;
+	border-radius: 30px 0px 0px 30px;;
+	font-size: 14px;
+	color: #333;
+	letter-spacing: -1px;
+}
+
+#searchButton {
+	width: 60px;
+	height: 45px;
+	border-radius: 0px 30px 30px 0px;
+	border: 1px;
+	background-color: #693FAA;
+	color: #fff;
+	line-height: 45px;
+	cursor: pointer;
+	margin-left: -4px;
+}
+
+input[id="hamburger"] {
+	display: none;
+}
+
+input[id="hamburger"]+label {
+	display: block;
+	width: 20px;
+	height: 15px;
+	top: 3px;
+	position: relative;
+	cursor: pointer;
+}
+
+input[id="hamburger"]+label span {
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 2px;
+	border-radius: 30px;
+	background: #000;
+	transition: all 0.35s;
+}
+
+input[id="hamburger"]+label span:nth-child(1) {
+	top: 0;
+}
+
+input[id="hamburger"]+label span:nth-child(2) {
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+input[id="hamburger"]+label span:nth-child(3) {
+	bottom: 0;
+}
+
+input[id="hamburger"]:checked+label {
+	z-index: 99;
+}
+
+input[id="hamburger"]:checked+label span {
+	background: black;
+}
+
+input[id="hamburger"]:checked+label span:nth-child(1) {
+	top: 50%;
+	transform: translateY(-50%) rotate(45deg);
+}
+
+input[id="hamburger"]:checked+label span:nth-child(2) {
+	opacity: 0;
+}
+
+input[id="hamburger"]:checked+label span:nth-child(3) {
+	bottom: 50%;
+	transform: translateY(50%) rotate(-45deg);
+}
+
+div[class="sidebar"] {
+	width: 100%;
+	height: 100%;
+	background: white;
+	position: fixed;
+	top: 0;
+	right: -100%;
+	z-index: 98;
+	transition: all 0.35s;
+}
+
+input[id="hamburger"]:checked+label+div {
+	right: 0;
+}
+
+.nav_mobile {
+	position: absolute;
+	top: 135px;
+	width: 100%;
+	padding: 0;
+}
+
+.sidebar .nav_mobile li {
+	color: black;
+	width: 100%;
+	list-style-type: none;
+	font-size: 20px;
+	border-bottom: 1px solid #ccc;
+	font-weight: bold;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	display: flex;
+	justify-content: center;
+}
+
+.sidebar a {
+	padding: 0;
+	text-decoration: none;
+	display: block;
+}
+
+.sidebar li a {
+	display: block;
+	font-weight: bold;
+	line-height: 40px;
+	margin: 0px;
+	padding: 0 40px;
+	text-align: center;
+	text-decoration: none;
+	transition: all 0.4s;
+}
+
+.sidebar li a:hover, .sidebar ul li a:hover {
+	text-decoration: none;
+	color: #eee;
+	padding: 0 40px;
+	margin: 0;
+	border: 0px;
+}
+
+/* 사이드바 - 채팅방, 최근본상품, Chatbot */
+#recentView {
+	width: 90px;
+	position: fixed;
+	top: 330px;
+	right: calc(50% - 630px);
+	transition: all 0.35s;
+}
+
+.recentViewItem {
+	padding: 10px;
+	border: 1px solid rgb(204, 204, 204);
+	background: rgb(255, 255, 255);
+	margin-bottom: 6px;
+	cursor: pointer;
+}
+
+.recentViewTxt {
+	font-size: 12px;
+	font-weight: 600;
+	color: rgb(102, 102, 102);
+	text-align: center;
+}
+
+.recentViewCount {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 10px;
+}
+
+.viewCount {
+	display: flex;
+	justify-content: center;
+	font-size: 12px;
+	color: rgb(247, 0, 0);
+	font-weight: 600;
+	width: 38px;
+	border-bottom: 2px dotted rgb(136, 136, 136);
+	padding-bottom: 10px;
+}
+#btn_recentItem {
+	background-color: white;
+	color: #693FAA;
+	border: 1px solid #693FAA;
+	border-radius: 3px;
+	font-size: 12px;
+	font-weight: 600;
+	cursor: pointer;
+}
+.btn_sell, .btn_myChatlist, .btn_chatBot {
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	gap: 3px;
+}
